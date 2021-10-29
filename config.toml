@@ -8,7 +8,7 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   bio = "MJT is the 'Godfather of Firewire' and the instigator and longtime chair of the IEEE 802.1 Time-sensitive Networking group."
   avatar = "https://www.gravatar.com/avatar/46b7d7a97c42688b463a6c85b6ac42b1"
 
-  [Params]
+[Params]
   subtitle = "" # Deprecated in favor of .Site.Params.logo.subtitle
   description = "Plumblinks ... the MJT biz" # Site description. Used in meta description
   copyright = "Michael Johas Teener" # Footer copyright holder, otherwise will use site title
@@ -42,7 +42,7 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
 [Params.sidebar]
   home = "right" # Configure layout for home page
   list = "left"  # Configure layout for list pages
-  single = false # Configure layout for single pages
+  single = "right" # Configure layout for single pages
   # Enable widgets in given order
   # widgets = ["search", "recent", "categories", "taglist", "social", "languages"]
   # alternatively "ddg-search" can be used, to search via DuckDuckGo
