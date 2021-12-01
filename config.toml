@@ -1,65 +1,98 @@
 baseURL = "https://plumblinks.com/"
 languageCode = "en-us"
 title = "Plumblinks"
-theme = "mainroad"
+theme = "Eclectic"
+summarylength = 10
+enableEmoji = true
+enableRobotsTXT = true
+# Enable Disqus
+#disqusShortname = ""
+
+# Google Analytics
 googleAnalytics = "" # Enable Google Analytics by entering your tracking id
+
+# Define the number of posts per page
+paginate = 10
+
+# Syntax highlighting
+pygmentsUseClasses = true   
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
+
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+        unsafe=true
+
+[taxonomies]
+    category = "categories"
+    series = "series"
+    tag = "tags"
+    
 [Author] # Used in authorbox
   name = "Michael Johas Teener"
-  bio = "MJT is the 'Godfather of Firewire' and the instigator and longtime chair of the IEEE 802.1 Time-sensitive Networking group."
+  bio = "MJT is the 'Godfather of Firewire' and was the instigator and longtime chair of the IEEE 802.1 Time-sensitive Networking group."
   avatar = "https://www.gravatar.com/avatar/46b7d7a97c42688b463a6c85b6ac42b1"
 
 [Params]
-  subtitle = "" # Deprecated in favor of .Site.Params.logo.subtitle
-  description = "Plumblinks ... the MJT biz" # Site description. Used in meta description
-  copyright = "Michael Johas Teener" # Footer copyright holder, otherwise will use site title
-  authorbox = true # Show authorbox at bottom of pages if true
-  toc = true # Enable Table of Contents
-  pager = true # Show pager navigation (prev/next links) at the bottom of pages if true
-  #post_meta = ["author", "date", "categories", "translations"] # Order of post meta information
-  #mainSections = ["post", "blog", "news"] # Specify section pages to show on home page and the "Recent articles" widget
-  #dateformat = "2006-01-02" # Change the format of dates
-  #mathjax = true # Enable MathJax
-  #mathjaxPath = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js" # Specify MathJax path
-  #mathjaxConfig = "TeX-AMS-MML_HTMLorMML" # Specify MathJax config
-  #googleFontsLink = "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" # Load Google Fonts
-  #highlightColor = "" # Deprecated in favor of .Site.Params.style.vars.highlightColor
-  #customCSS = ["css/custom.css"] # Include custom CSS files
- # customJS = ["js/custom.js"] # Include custom JS files
+  title = "Plumblinks" # Deprecated in favor of .Site.Params.logo.subtitle
+  defaultDescription = " ... the MJT biz" # Site description. Used in meta description
+  profilePicture = "images/MikeSummer2021.jpg"
+# Social media
+    facebook_site = "" # the Facebook handle of your site ('https://www.facebook.com/HANDLE')
+    twitter_site = "gofw" # the Twitter handle of your site (without the '@')
+    default_sharing_image = "img/sharing-default.png"
 
-[Params.style.vars]
-  #highlightColor = "#e22d30" # Override highlight color
+# Style options: default (light-blue), blue, green, marsala, pink, red, turquoise, violet
+    style = "default"
 
-  # Override font-family sets. Secondary font-family set responsible for pre, code, kbd, and samp tags font
-  # Take care of different quotes OR escaping symbols in these params if necessary
-  #fontFamilyPrimary = "'Open Sans', Helvetica, Arial, sans-serif"
-  #fontFamilySecondary = "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace"
 
-[Params.logo]
-  #image = "img/placeholder.png" # Logo image. Path relative to "static"
-  #title = "Mainroad" # Logo title, otherwise will use site title
-  #subtitle = "Just another site" # Logo subtitle
+ [menu]
+ 
+ # Top bar social links menu
 
-[Params.sidebar]
-  home = "right" # Configure layout for home page
-  list = "left"  # Configure layout for list pages
-  single = "right" # Configure layout for single pages
-  # Enable widgets in given order
-  # widgets = ["search", "recent", "categories", "taglist", "social", "languages"]
-  # alternatively "ddg-search" can be used, to search via DuckDuckGo
-  widgets = ["ddg-search", "recent", "categories", "taglist", "social", "languages"]
+[[menu.topbar]]
+    weight = 1
+    name = "Phone"
+    url = "tel:+1-831-824-4228"
+    pre = "<i class='fas fa-2x fa-phone'></i>"
 
-[Params.widgets]
-  recent_num = 5 # Set the number of articles in the "Recent articles" widget
-  categories_counter = false # Enable counter for each category in "Categories" widget
-  tags_counter = false # Enable counter for each tag in "Tags" widget
+[[menu.topbar]]
+    weight = 2
+    name = "GitHub"
+    url = "https://github.com/mikejt"
+    pre = "<i class='fab fa-2x fa-github'></i>"
 
-[Params.widgets.social]
-  # Enable parts of social widget
-  #facebook = "username"
-  #twitter = "username"
- # instagram = "username"
-  linkedin = "mjohasteener"
- # telegram = "username"
-# github = "username"
-  email = "info@plumblinks.com"
+[[menu.topbar]]
+    weight = 3
+    name = "LinkedIn"
+    url = "https://www.linkedin.com/in/mjohasteener"
+    pre = "<i class='fab fa-2x fa-linkedin'></i>"
 
+[[menu.topbar]]
+    weight = 4
+    name = "Twitter"
+    url = "http://twitter.com/gofw"
+    pre = "<i class='fab fa-2x fa-twitter'></i>"
+
+    [permalinks]
+    blog = "/blog/:year/:month/:day/:filename/"
+
+# Enable or disable top bar with social icons
+[params.topbar]
+    enable = false
+    text = """<p class="hidden-sm hidden-xs">Contact us on +420 777 555 333 or hello@universal.com.</p>
+      <p class="hidden-md hidden-lg"><a href="tel:+420 777 555 333" data-animate-hover="pulse"><i class="fas fa-phone"></i></a>
+      <a href="mailto:hello@universal.com" data-animate-hover="pulse"><i class="fas fa-envelope"></i></a>
+      </p>
+      """
+
+# Enable and disable widgets for the right sidebar
+[params.widgets]
+    categories = true
+    tags = true
+    search = true
+
+
+[params.footer.recent_posts]
+    enable = true
